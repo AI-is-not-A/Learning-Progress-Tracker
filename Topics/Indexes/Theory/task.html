@@ -1,0 +1,59 @@
+<h2>Indexes</h2>
+<div class="step-text">
+<p>There are several types of <a class="theory-lookup" href="/learn/step/10014" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a collection is a data structure used to store and manage data. | There are four main types of collections: lists, tuples, sets, and dictionaries. Each collection has its own unique properties and use cases. Lists and tuples are both sequence types, meaning they store elements in a specific order. The main difference between them is that lists are mutable, meaning their elements can be changed, while tuples are immutable, meaning their elements cannot be changed once they are set.">collections</a> to store data in Python. Positionally <a class="theory-lookup" href="/learn/step/10059" rel="noopener noreferrer nofollow" target="_blank" title="In Python, 'ordered' generally refers to the fact that the elements of a collection have a specific order or sequence in which they appear. | This is in contrast to unordered collections, where the order of elements does not matter. In Python, examples of ordered collections include lists and strings, where each element has a specific index that corresponds to its position in the collection. Additionally, certain data structures like dictionaries can also maintain order of insertion in more recent versions of Python.">ordered</a> collections of <a class="theory-lookup" href="/learn/step/36290" rel="noopener noreferrer nofollow" target="_blank" title="In Python, an element is a single item in a collection such as a list, tuple, set, or dictionary. | It can be of any data type, including numbers, strings, booleans, or even other collections. Elements are ordered in lists and tuples, unordered in sets, and associated with a key in dictionaries.">elements</a> are usually called <strong><a class="theory-lookup" href="/learn/step/6177" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a sequence is a type of data structure that can store multiple items in a particular order. | It includes lists, tuples, and strings. Sequences are characterized by their ability to be indexed, sliced, and iterated over. Indexing allows you to access individual elements of the sequence by their position, slicing allows you to extract a subset of the sequence, and iteration allows you to loop through the elements of the sequence. Sequences are also immutable, meaning that once they are created, their elements cannot be changed.">sequences</a></strong>, and both <a class="theory-lookup" href="/learn/step/5979" rel="noopener noreferrer nofollow" target="_blank" title="A list in Python is an ordered collection of elements, where each element can be of any data type. | It offers a range of operations that allow you to manipulate and work with the elements stored within them. Lists can contain other lists, known as nested lists, and elements of a nested list can be accessed by index. Lists are dynamic collections, meaning they can be changed without the need to constantly create new lists, which benefits the memory and performance of your program.">lists</a> and <a class="theory-lookup" href="/learn/step/6842" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a string is a sequence of characters, enclosed in either single or double quotes. | It is a common and useful data type, often used to represent textual information. Strings can be multi-line, created using triple quotes on each side of the string literal. The Python standard library has a module called `string` that offers additional tools to work with strings. Docstrings are a common use of strings in Python, used to document classes, modules, or functions.">strings</a> belong to them. Each element in a list, as well as each <a class="theory-lookup" href="/learn/step/10035" rel="noopener noreferrer nofollow" target="_blank" title="In Python, a character is a single Unicode character, which can be represented using the `str` data type. | This data type has a twofold nature, representing human-readable strings in a form that is suitable for computer processing.">character</a> in a string, has an <strong>index</strong> that corresponds to its <a class="theory-lookup" href="/learn/step/7248" rel="noopener noreferrer nofollow" target="_blank" title="In Python, position refers to the order of elements in a sequence, such as a list or a string. | Each element in a list, as well as each character in a string, has an index that corresponds to its position. Indexing in Python is zero-based, meaning that the index of the first element is 0. To access an element of a list by its index, you can use square brackets and place the index of the element you want to get between them.">position</a>. Indexes are used to access elements within a sequence. <a class="theory-lookup" href="/learn/step/16458" rel="noopener noreferrer nofollow" target="_blank" title="Indexing in Python refers to the process of accessing an element within a sequence, such as a list or a string, using its index or position. | The index is always zero-based, meaning that the first element has an index of 0. To access an element of a list by its index, you need to use square brackets and place the index of the desired element between them. The index is added after the list name, followed by the square brackets.">Indexing</a> is <em>zero-based</em>, so if you see a person who counts from zero, you must have met a programmer.</p>
+<h5 id="indexes-of-elements" style="text-align: center;">Indexes of elements</h5>
+<p>To access an element of a list by its index, you need to use <strong>square brackets. </strong>You add the brackets after the list and, between them, you write the index of an element you want to get.</p>
+<p>Don't forget<strong>, </strong> the indexes start at 0, so the index of the first element is 0. The index of the last element is equal to <code class="language-python">len(list) - 1</code>.</p>
+<p>Let's take a look at the example below:</p>
+<pre><code class="language-python">colors = ['red', 'green', 'blue']
+
+first_elem = colors[0]   # 'red'
+second_elem = colors[1]  # 'green'
+third_elem = colors[2]   # 'blue'</code></pre>
+<p>Strings work in the same way:</p>
+<pre><code class="language-python">pet = "cat"
+
+first_char = pet[0]   # 'c'
+second_char = pet[1]  # 'a'
+third_char = pet[2]   # 't'</code></pre>
+<h5 id="potential-pitfalls" style="text-align: center;">Potential pitfalls</h5>
+<p>When using indexes, it's important to stay within the <a class="theory-lookup" href="/learn/step/10035" rel="noopener noreferrer nofollow" target="_blank" title="The 'range' function in Python is a built-in function that generates a sequence of numbers over time. | It is often used in loops to iterate over a specific range of numbers. The function can take up to three parameters: start, stop, and step. The default values for these parameters are 0, 1, and 1, respectively. The 'range' function is flexible and can generate both ascending and descending sequences of numbers. It is an essential tool in Python for working with sequences of numbers.">range</a> of your sequence: you'll get an error (called <code class="language-python">IndexError</code>) if you try to access an element with a non-existing index!</p>
+<pre><code class="language-python">colors = ['red', 'green', 'blue']
+pet = "cat"
+
+print(colors[3])  # IndexError: list index out of range
+print(pet[3])     # IndexError: string index out of range</code></pre>
+<p>There is one more obstacle in your way. Imagine that you want to change one of the elements in a list. It can be easily done:</p>
+<pre><code class="language-python">colors = ['red', 'green', 'blue']
+
+colors[1] = 'white'
+print(colors)  # ['red', 'white', 'blue']</code></pre>
+<p>However, when it comes to strings, such reassignment is impossible. Strings, unlike lists, are immutable, so you can't modify their contents with indexes:</p>
+<pre><code class="language-python">pet = "cat"
+
+pet[0] = "b"
+# TypeError: 'str' object does not support item assignment</code></pre>
+<p>Don't worry, after some practice, you will not encounter these errors.</p>
+<h5 id="negative-indexes" style="text-align: center;">Negative indexes</h5>
+<p>The easier way to access the elements at the end of a list or a string is to use <strong><a class="theory-lookup" href="/learn/step/6177" rel="noopener noreferrer nofollow" target="_blank" title="A negative index in Python is a way to access elements in a sequence (such as a list or string) by counting from the end of the sequence instead of the beginning. | The index -1 refers to the last element, -2 refers to the second to last element, and so on. This can be useful when you want to access elements from the end of a sequence without knowing its length. It's important to note that negative indexing is only supported for sequences, not for other types of objects in Python.">negative indexes</a></strong>: the minus before the number changes your perspective in a way and you look at the sequence from the end. So, the last element of a list, in this case, has the index equal to <strong>-1</strong>, and the first element of the list has the index <code class="language-python">-len(list)</code> (the <a class="theory-lookup" href="/learn/step/10963" rel="noopener noreferrer nofollow" target="_blank" title="In Python, the concept of length refers to the number of items in an object, such as a list, tuple, string, or dictionary. | It is determined by the built-in `len()` function, which returns the number of elements in the given object. The length of an object is also known as its size or cardinality. It is a fundamental property of a collection in Python and is used to measure the amount of data stored in an object. The length of an object can be used in various operations, such as looping, slicing, and indexing.">length</a> of the list).</p>
+<p>For example:</p>
+<pre><code class="language-python">colors = ['red', 'green', 'blue']
+
+last_elem = colors[-1]    # 'blue'
+second_elem = colors[-2]  # 'green'
+first_elem = colors[-3]   # 'red'
+
+pet = "cat"
+
+last_char = pet[-1]    # 't'
+second_char = pet[-2]  # 'a'
+first_char = pet[-3]   # 'c'</code></pre>
+<p>As you can see, it works the same for lists and strings.</p>
+<p> </p>
+<p></p><div class="alert alert-warning">If you write a non-existing negative index, you'll also get <code class="language-python">IndexError</code>. Be careful with indexes to avoid off-by-one errors in your code.</div>
+<p> </p>
+<p>The following picture shows the general concept of indexes in a list:</p>
+<p style="text-align: center;"><picture><img alt="Python index" height="170" src="https://ucarecdn.com/5485f397-8a2f-4279-b534-a496fe509469/" width="511"/></picture></p>
+<h5 id="summary">Summary</h5>
+<p>In this topic, we've learned what positive and negative indexes are in Python, how to find elements in a list by their indexes, and what errors might occur when using them. Since you have learned the concept of indexes, we hope that from now on you will not encounter any difficulties when using them!</p>
+</div>
